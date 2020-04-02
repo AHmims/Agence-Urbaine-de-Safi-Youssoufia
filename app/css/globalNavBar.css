@@ -47,7 +47,7 @@ html {
     margin-right: 35px;
     color: #00000080;
     text-transform: capitalize;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 /* MOBILE */
@@ -85,6 +85,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     /*  */
     box-sizing: border-box;
     border-right: 1px solid black;

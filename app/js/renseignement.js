@@ -29,6 +29,7 @@ $(document).ready(() => {
     });
     // WHEN CLICKING THE ADD BUTTONS SHOW THE FORM TO ADD A QUESTION
     $('#add-question').click(showQuestionForm);
+    $('#btn-ask').click(showQuestionForm);
     //
     $('#q-form-btn-anuller').click(hideQuestionForm);
     $('#q-form-cont').click((e) => {
