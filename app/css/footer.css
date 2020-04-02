@@ -47,6 +47,14 @@ h2 {
           align-items: center;
 }
 
+.just {
+  margin-left: 150px;
+}
+
+.hi2 {
+  display: none;
+}
+
 .general {
   margin-top: 100px;
 }
@@ -65,8 +73,6 @@ h2 {
 
 .general .formInscription,
 .general .formConnection {
-  -webkit-transition: 2s;
-  transition: 2s;
   background-size: cover;
   padding: 3%;
   height: 500px;
@@ -148,5 +154,15 @@ h2 {
   border: 0;
   outline: 0;
   border-bottom: 3px solid #2893DA;
+}
+
+@media (max-width: 575.98px) {
+  .hi2 {
+    display: block;
+    margin-left: -59px;
+  }
+  .hi {
+    display: none;
+  }
 }
 /*# sourceMappingURL=footer.css.map */

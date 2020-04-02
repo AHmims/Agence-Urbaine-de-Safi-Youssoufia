@@ -62,7 +62,7 @@ h1 {
 }
 
 .main {
-    position: relative;
+    // position: relative;
     background: url(../img/3.jpg);
     background-size: cover;
     background-position: center;
@@ -72,6 +72,8 @@ h1 {
     background-repeat: no-repeat;
     color: white;
     font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-height: 100%;
 }
 
 // .carré {
@@ -80,13 +82,13 @@ h1 {
 //     background-color: red;
 // }
 
-.division {
-    background-color: white;
-    // height: 200px;
-    width: 80%;
-    margin-left: -195px;
-    vertical-align: bottom;
-}
+// .division {
+//     background-color: white;
+//     // height: 200px;
+//     width: 80%;
+//     margin-left: -195px;
+//     vertical-align: bottom;
+// }
 
 // @media (min-width: 576px) { ... }
 
@@ -125,15 +127,20 @@ h1 {
 .liny {
     margin: 50px;
 }
+
 .icony {
     width: 100%;
 }
+
 .imagy {
     width: 50%;
 }
 
+
 .hello {
-    margin-top: 20px;
+    padding: 25px;
+    font-size: 11px;
+    display: initial;
 }
 
 .yellow {
@@ -145,5 +152,46 @@ h1 {
 .back {
     color: black;
     background-color: $color2;
+}
 
+.adj {
+    background-color: white;
+    width: 50%;
+    vertical-align: bottom;
+    min-height: 330px;
+    margin-top: -277px;
+    margin-left: 10px;
+}
+
+.lor {
+    color: black;
+    text-align: center;
+}
+
+.gad {
+    margin: 30px;
+    display: block;
+}
+
+
+// .adj {
+//     height: 200px;
+// }
+
+// @media (min-width: 576px) { 
+//     .imagy {
+//         display: none;
+//     }
+//  }
+
+// Medium devices (tablets, 768px and up)
+
+
+@media (max-width: 575.98px) {
+    .imagy {
+        display: none;
+    }
+    .adj {
+        display: flex;
+    }
 }

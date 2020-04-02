@@ -50,6 +50,14 @@ h2 {
     align-items: center;
 }
 
+.just {
+    margin-left: 150px;
+}
+
+.hi2 {
+    display: none;
+}
+
 .general {
     & .formInscription {
         background-image: url("../img/4.png");
@@ -66,7 +74,6 @@ h2 {
 
     & .formInscription,
     & .formConnection {
-        transition: 2s;
         background-size: cover;
         padding: 3%;
         height: 500px;
@@ -139,5 +146,15 @@ h2 {
                 border-bottom: 3px solid #2893DA;
             }
         }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hi2 {
+        display: block;
+        margin-left: -59px;
+    }
+    .hi {
+        display: none;
     }
 }
