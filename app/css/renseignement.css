@@ -257,3 +257,10 @@ body {
 #q-form-btn-anuller {
     margin-right: 5px;
 }
+
+/*  */
+@media screen and (max-width:700px) {
+    #b-content {
+        padding-bottom: 60px;
+    }
+}

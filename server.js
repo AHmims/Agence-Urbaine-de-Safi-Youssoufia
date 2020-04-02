@@ -16,10 +16,13 @@ _APP.use(_BODY_PARSER.urlencoded({ // to support URL-encoded bodies
 
 // SEND AN HTML FILE WHEN THE REQUESTED URL IS CALLED
 _APP.get('/', (req, res) => {
-    res.sendFile(_PATH.join(__dirname, 'app', 'index.html'));
+    res.sendFile(_PATH.join(__dirname, 'app', 'html/index.html'));
 });
 _APP.get('/inscription', (req, res) => {
-    res.sendFile(_PATH.join(__dirname, 'app/inscription.html'));
+    res.sendFile(_PATH.join(__dirname, 'app/html/inscription.html'));
+});
+_APP.get('/service', (req, res) => {
+    res.sendFile(_PATH.join(__dirname, 'app/html/services.html'));
 });
 _APP.get('/renseignement', (req, res) => {
     res.sendFile(_PATH.join(__dirname, 'app/html/renseignement.html'));
@@ -66,7 +69,7 @@ _APP.post('/getQuestions', async function (req, res) {
         if (!question.resolved) {
             let client = await _FUNCS.searchBy("Client", question.clientId);
             let service = await _FUNCS.searchBy("Service", question.serviceId);
-            console.log(service);
+            // console.log(service);
             // 
             results.push({
                 index: i,
@@ -78,7 +81,7 @@ _APP.post('/getQuestions', async function (req, res) {
             });
         }
     }
-    console.log(results);
+    // console.log(results);
     // 
     res.end(JSON.stringify(results));
 });
