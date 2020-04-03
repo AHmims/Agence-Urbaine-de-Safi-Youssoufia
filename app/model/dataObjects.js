@@ -38,6 +38,18 @@ class Client {
         // 
         return returnData;
     }
+    //RETUEN NOM AND PRENOM DATA
+    getNomPrenom(type = 'object') {
+        let returnData = {
+            nom: this.nom,
+            prenom: this.prenom
+        }
+        // 
+        if (type != 'object')
+            returnData = [this.nom, this.prenom];
+        // 
+        return returnData;
+    }
     // RETURN THE CLASSES UNIQUE IDENTIFIER
     getId() {
         return this.cin;

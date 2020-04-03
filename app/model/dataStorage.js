@@ -195,15 +195,17 @@ async function pathExists(path) {
 async function searchByEmailAndPass(data) {
     const _DATA = await jsonGetAll("Client");
     let retValue=false;
+    let retValues="false";
     _DATA.forEach(data_objet => {
         if(retValue == false)
         {
             if (data_objet.getCred().email==data.email && data_objet.getCred().motPass==data.motPass){
+                retValues=data_objet.getNomPrenom().nom+" "+data_objet.getNomPrenom().prenom;
                 retValue = true;
             }
         }
     });
-    return retValue;
+    return retValues;
 }
 
 

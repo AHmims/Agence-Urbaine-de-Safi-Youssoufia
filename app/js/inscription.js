@@ -215,7 +215,8 @@ $('#btnRegister').click(() => {
             if(response=="true")
             {
                 sessionStorage.setItem("email", $('#inscriptionEmail').val());
-                console.log(sessionStorage.getItem("email"));
+                sessionStorage.setItem("nomComple", $('#inscriptionNom').val()+" "+$('#inscriptionPrenom').val());
+                console.log(sessionStorage.getItem("nomComple"));
                 document.location.href = '/renseignement';
             }
         });
@@ -230,10 +231,11 @@ $('#btnconnection').click(() => {
                 motPass: $('#ConnectionMotDePass').val()
             }
         }, (response) => {
-                if(response=="true")
+                if(response!=="true")
                 {
                     sessionStorage.setItem("email", $('#ConnectionEmail').val());
-                    console.log(sessionStorage.getItem("email"));
+                    sessionStorage.setItem("nomComple", response);
+                    console.log(sessionStorage.getItem("nomComple"));
                     document.location.href = '/renseignement';
                 }
                 else
