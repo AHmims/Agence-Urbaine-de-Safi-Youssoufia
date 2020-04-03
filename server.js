@@ -16,7 +16,7 @@ _APP.use(_BODY_PARSER.urlencoded({ // to support URL-encoded bodies
 
 // SEND AN HTML FILE WHEN THE REQUESTED URL IS CALLED
 _APP.get('/', (req, res) => {
-    res.sendFile(_PATH.join(__dirname, 'app', 'html/index.html'));
+    res.sendFile(_PATH.join(__dirname, 'app/html/index.html'));
 });
 _APP.get('/inscription', (req, res) => {
     res.sendFile(_PATH.join(__dirname, 'app/html/inscription.html'));
