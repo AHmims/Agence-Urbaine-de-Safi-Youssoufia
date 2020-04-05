@@ -1,4 +1,6 @@
 $(document).ready(() => {
+    if (!sessionStorage.getItem('cin'))
+        window.location.href = "/inscription";
     // REMPLIRE LES CHAMPS SELECT AVEC LES SERVICES
     fillServicesSelects();
     // 
@@ -45,11 +47,15 @@ $(document).ready(() => {
             class: "Question",
             data: {
                 text: $('#q-form-txtarea').val(),
-                clientId: "JKQSHD876",
+                clientId: sessionStorage.getItem('cin'),
                 serviceId: $("#q-form-services").children("option:selected").val()
             }
         }, (response) => {
-            console.log(response);
+            //console.log(response);
+            if (response) {
+                alert('Success!');
+                location.reload();
+            }
         });
     });
 });
@@ -79,7 +85,7 @@ function cardMaker(question) {
     // 
     cardInfoName.innerText = question.client;
     cardInfoService.innerText = question.service;
-    console.log(question);
+    //console.log(question);
     cardInfoService.setAttribute('data-service', question.sId);
     // 
     cardInfoTop.appendChild(cardInfoName);
@@ -102,7 +108,11 @@ function cardMaker(question) {
             index: question.index,
             reponseText: $(txtValue).val()
         }, (response) => {
-            console.log(response);
+            if (response) {
+                alert('Success!');
+                location.reload();
+            }
+            //console.log(response);
         });
     });
     // 
@@ -150,7 +160,7 @@ function showQuestionForm() {
     });
     //     // 
     document.getElementById('q-form-services').addEventListener('change', () => {
-        // console.log("ff");
+        // //console.log("ff");
         document.getElementById('q-form-service-desc').innerText = $("#q-form-services").children("option:selected").attr('data-desc');
     });
     // });

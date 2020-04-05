@@ -194,14 +194,14 @@ async function pathExists(path) {
 //RETURN A CLIENT OF THE SERCHED FOR VALUE👀
 async function searchByEmailAndPass(data) {
     const _DATA = await jsonGetAll("Client");
-    let retValue=false;
-    let retValues="false";
+    let retValue = false;
+    let retValues = "false";
     _DATA.forEach(data_objet => {
-        if(retValue == false)
-        {
-            if (data_objet.getCred().email==data.email && data_objet.getCred().motPass==data.motPass){
-                retValues=data_objet.getNomPrenom().nom+" "+data_objet.getNomPrenom().prenom;
-                retValue = true;
+        if (retValue == false) {
+            if (data_objet.getCred().email == data.email && data_objet.getCred().motPass == data.motPass) {
+                retValues = data_objet.getNomPrenom().nom + " " + data_objet.getNomPrenom().prenom;
+                // retValue = true;
+                retValue = data_objet.getAll().cin;
             }
         }
     });
@@ -218,5 +218,3 @@ module.exports = {
     updateQuestionStatus,
     searchByEmailAndPass
 }
-
-

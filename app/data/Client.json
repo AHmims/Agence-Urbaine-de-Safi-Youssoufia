@@ -1,17 +1,1 @@
-[{
-    "cin": "JKQSHD876",
-    "nom": "ALI",
-    "prenom": "Hmims",
-    "dateN": "some date",
-    "email": "mqsdk@ff.com",
-    "numeroTel": "0898796",
-    "motPass": "LKJDQS98DS"
-}, {
-    "cin": "hh11111",
-    "nom": "noman",
-    "prenom": "jamal eddine",
-    "dateN": "1990-01-01",
-    "email": "jamal@gmail.com",
-    "numeroTel": "0628822271",
-    "motPass": "Aaaaaa@1"
-}]
+[{"cin":"JKQSHD876","nom":"ALI","prenom":"Hmims","dateN":"some date","email":"mqsdk@ff.com","numeroTel":"0898796","motPass":"LKJDQS98DS"},{"cin":"hh11111","nom":"noman","prenom":"jamal eddine","dateN":"1990-01-01","email":"jamal@gmail.com","numeroTel":"0628822271","motPass":"Aaaaaa@1"},{"cin":"FF0125","nom":"dgfdg","prenom":"dfgfdgdf","dateN":"1990-01-01","email":"fgdgff@gmail.fr","numeroTel":"0663125122","motPass":"1122334455AZERTYazerty@"},{"cin":"FF0125","nom":"dgfdg","prenom":"dfgfdgdf","dateN":"1990-01-01","email":"fgdgff@gmail.fr","numeroTel":"0663125122","motPass":"1122334455AZERTYazerty@"},{"cin":"FF0125","nom":"dgfdg","prenom":"dfgfdgdf","dateN":"1990-01-01","email":"fgdgff@gmail.fr","numeroTel":"0663125122","motPass":"1122334455AZERTYazerty@"}]
