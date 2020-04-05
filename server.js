@@ -3,9 +3,13 @@ const _EXPRESS = require('express');
 const _APP = _EXPRESS();
 const _BODY_PARSER = require('body-parser')
 const _PATH = require('path');
+const _CORS = require('cors');
 const _PORT = 8080;
 const _FUNCS = require('./app/model/dataStorage');
 // 
+app.use(_CORS({
+    origin: true
+}));
 // BODY-PARSER MIDDLEWARE
 _APP.use(_BODY_PARSER.json()); // to support JSON-encoded bodies
 _APP.use(_BODY_PARSER.urlencoded({ // to support URL-encoded bodies
@@ -26,9 +30,6 @@ _APP.get('/service', (req, res) => {
 });
 _APP.get('/renseignement', (req, res) => {
     res.sendFile(_PATH.join(__dirname, 'app/html/renseignement.html'));
-});
-_APP.get('/dev', (req, res) => {
-    res.sendFile(_PATH.join(__dirname, 'app/html/backEnd_Testing.html'));
 });
 // LISTEN FOR REQUESTES FROM THE CLIENT
 // REQUEST TO SAVE THE GIVEN DATA INTO THE JSON FILE
