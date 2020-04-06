@@ -53,12 +53,49 @@
                     <div class="col">
                         <h2>Agence Urbaine.<h2>
                                 <div class="little">Safi & Youssoufia</div>
-                                <button type="button" class="btn btn-warning btn-sm col-6 col-md-4 botona">Posez nous
+                                <button type="button" class="btn btn-primary btn-warning btn-sm col-6 col-md-4 botona" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Posez nous
                                     vos question</button>
                     </div>
                 </div>
         </div>
     </div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Forum</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Nom:</label>
+            <input type="text" class="form-control recipient-name" id="tt">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Ta question:</label>
+            <input type="text" class="form-control recipient-name" id="quest">
+          </div>
+        </form>
+        </div>
+        <div id="affich">
+            Questions:
+            <div id="tit">            
+            </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary btn-warning" id="test">Envoyez</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -390,20 +427,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
                     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
                     crossorigin="anonymous"></script>
@@ -413,9 +436,44 @@
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                     crossorigin="anonymous"></script>
-            </div>
-
-        </div>
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            $('#test').click(() => {
+                // $.post("/testReq", {}, function (response) {
+                //     document.getElementsByTagName('h1')[0].innerText = response;
+                // });
+                // 
+                // 
+                // $.post("/testData", {
+                //     data1: document.getElementById('tt').value,
+                //     data2: "qsdqs"
+                // }, function (response) {
+                //     console.log(response);
+                // });
+                
+                
+                $.post('/getData', {}, function (response) {
+                    // console.log(JSON.parse(response))
+                    var obj = JSON.parse(response);
+                    // // 
+                    for (let i = 0; i < obj.length; i++) {
+                        document.getElementById('affich').innerHTML += `<div>${obj[i].id} | ${obj[i].quest}</div>`;
+                     }
+                    
+                });
+                // 
+                // 
+                $.post('/setData', {
+                    id: document.getElementById('tt').value,
+                    quest: document.getElementById('quest').value
+                }, function (response) {
+                    console.log(response);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
