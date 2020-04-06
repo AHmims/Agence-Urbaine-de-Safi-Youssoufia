@@ -8,12 +8,6 @@ const _FUNCS = require('./app/model/dataStorage');
 const fs = require('fs');
 const fse = require('fs-extra');
 // 
-<<<<<<< HEAD
-=======
-_APP.use(_CORS({
-    origin: true
-}));
->>>>>>> 2f544b045f2dae96cd8b7cf99bf62957b6370236
 // BODY-PARSER MIDDLEWARE
 _APP.use(_BODY_PARSER.json()); // to support JSON-encoded bodies
 _APP.use(_BODY_PARSER.urlencoded({ // to support URL-encoded bodies
