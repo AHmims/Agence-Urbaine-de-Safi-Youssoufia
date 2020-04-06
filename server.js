@@ -6,8 +6,10 @@ const _PATH = require('path');
 const _CORS = require('cors');
 const _PORT = 8080;
 const _FUNCS = require('./app/model/dataStorage');
+const fs = require('fs');
+const fse = require('fs-extra');
 // 
-app.use(_CORS({
+_APP.use(_CORS({
     origin: true
 }));
 // BODY-PARSER MIDDLEWARE
@@ -102,6 +104,36 @@ _APP.post('/submitResponse', async function (req, res) {
     // 
     res.end(result.toString());
 });
+// 
+// 
+// 
+
+_APP.post('/testData', function (req, res) {
+    console.log(req.body);
+});
+// 
+_APP.post('/getData', async function (req, res) {
+    // fs.readFile('app/data/data.json', function (e, result) {
+    //     var obj = JSON.parse(result);
+    //     res.end(JSON.stringify(obj));
+    // });
+    var data = await fse.readJSON('app/data/data.json');
+    console.log(data);
+    res.end(JSON.stringify(data));
+});
+// 
+_APP.post('/setData', async function (req, res) {
+    var data = await fse.readJSON('app/data/data.json');
+    data.push(req.body);
+    // 
+    await fse.writeJSON('app/data/data.json', data);
+    // 
+    res.end("done");
+    console.log(response);
+});
+
+
+
 // GIVE THE LOCAL SERER TO ACCESS /APP FOLDER
 _APP.use('/', _EXPRESS.static(_PATH.join(__dirname, 'app')));
 // START THE SERVER
