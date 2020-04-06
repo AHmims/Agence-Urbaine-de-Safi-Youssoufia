@@ -1,2 +1,4 @@
 # Agence-Urbaine-de-Safi-Youssoufia
-Agence Urbaine de Safi-Youssoufia. Team => Reda FATTATI , Meryem ELBETTAL, Ali HMIMS, Noaman JAMAL EDDINE
+1: git clone https://github.com/AHmims/Agence-Urbaine-de-Safi-Youssoufia.git
+2: npm i
+3: npm start
