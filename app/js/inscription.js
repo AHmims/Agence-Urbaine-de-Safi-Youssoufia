@@ -231,7 +231,7 @@ $('#btnconnection').click(() => {
                 motPass: $('#ConnectionMotDePass').val()
             }
         }, (response) => {
-                if(response!=="true")
+                if(response!=="false")
                 {
                     sessionStorage.setItem("email", $('#ConnectionEmail').val());
                     sessionStorage.setItem("nomComple", response);
