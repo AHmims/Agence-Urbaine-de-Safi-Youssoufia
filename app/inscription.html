@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/inscription.css">
+    <title>inscription</title>
+  </head>
+  <body>
+      <div class="general">
+        <div class="container formInscription" style="display: block;">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="img/userIcon.png" alt=""/>
+                    <h3>Nous saluons le retour</h3>
+                    <p>pour rester connecté avec nous, veuillez vous connecter avec vos informations personnelles</p>
+                    <input type="button" value="Connection" onclick="inscriptionToConnection()"/><br/>
+                </div>
+                <div class="col-md-9 register-right">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Créer un compte</h3>
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="CIN *" id="inscriptionCin" oninput="validationCin()" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Nom *" id="inscriptionNom" oninput="validationNom()"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Prenom *" id="inscriptionPrenom" oninput="validationPrenom()"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control"  placeholder="Date Naissance *" value="1990-01-01" id="inscriptionDateNaissance" onchange="validationDateNaissance()"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email *" id="inscriptionEmail" oninput="validationEmail()"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel"class="form-control" placeholder="Numero de Telephone *" id="inscriptionNumeroDeTelephone" oninput="validationNumeroDeTelephone()"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Mot de Passe *" id="inscriptionMotDePass" oninput="validationMotDePass()"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Confirmation Mot de Passe *" id="confirmationMotDePass" oninput="confirmationMotDePass()"/>
+                                    </div>
+                                    <input type="submit" class="btnRegister"  value="Inscription"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container formConnection">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="img/userIcon.png" alt=""/>
+                    <h3>Nouveau ici ?</h3>
+                    <p>entrez vos informations personnelles et commencez la connexion avec nous</p>
+                    <input type="button" value="Inscription" onclick="connectionToInscription()"/><br/>
+                </div>
+                <div class="col-md-9 register-right">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Connexion à votre compte</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <div class="form-group" style="visibility: hidden">
+                                        <input type="email" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email *" id="ConnectionEmail" oninput="validationConnectionEmail()"/>
+                                    </div>
+                                    <div class="form-group" style="visibility: hidden">
+                                        <input type="email" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Mot de Passe *" id="ConnectionMotDePass" oninput="validationConnectionMotDePass()"/>
+                                    </div>
+                                    <input type="submit" class="btnRegister"  value="Connection"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/inscription.js"></script>
+  </body>
+</html>

@@ -5,6 +5,8 @@ const _BODY_PARSER = require('body-parser')
 const _PATH = require('path');
 const _PORT = 8080;
 const _FUNCS = require('./app/model/dataStorage');
+const fs = require('fs');
+const fse = require('fs-extra');
 // 
 // BODY-PARSER MIDDLEWARE
 _APP.use(_BODY_PARSER.json()); // to support JSON-encoded bodies
@@ -26,9 +28,6 @@ _APP.get('/service', (req, res) => {
 });
 _APP.get('/renseignement', (req, res) => {
     res.sendFile(_PATH.join(__dirname, 'app/html/renseignement.html'));
-});
-_APP.get('/dev', (req, res) => {
-    res.sendFile(_PATH.join(__dirname, 'app/html/backEnd_Testing.html'));
 });
 // LISTEN FOR REQUESTES FROM THE CLIENT
 // REQUEST TO SAVE THE GIVEN DATA INTO THE JSON FILE
@@ -101,6 +100,36 @@ _APP.post('/submitResponse', async function (req, res) {
     // 
     res.end(result.toString());
 });
+// 
+// 
+// 
+
+_APP.post('/testData', function (req, res) {
+    console.log(req.body);
+});
+// 
+_APP.post('/getData', async function (req, res) {
+    // fs.readFile('app/data/data.json', function (e, result) {
+    //     var obj = JSON.parse(result);
+    //     res.end(JSON.stringify(obj));
+    // });
+    var data = await fse.readJSON('app/data/data.json');
+    console.log(data);
+    res.end(JSON.stringify(data));
+});
+// 
+_APP.post('/setData', async function (req, res) {
+    var data = await fse.readJSON('app/data/data.json');
+    data.push(req.body);
+    // 
+    await fse.writeJSON('app/data/data.json', data);
+    // 
+    res.end("done");
+    console.log(response);
+});
+
+
+
 // GIVE THE LOCAL SERER TO ACCESS /APP FOLDER
 _APP.use('/', _EXPRESS.static(_PATH.join(__dirname, 'app')));
 // START THE SERVER

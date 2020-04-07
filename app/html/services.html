@@ -5,17 +5,68 @@
     <title>Services Form</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/globalNavBar.css">
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 </head>
 
 <body>
+    <div id="navbarCont">
+        <div id="nb-lg">
+            <div id="nb-logo">
+                <span>Agence</span>
+            </div>
+            <div id="nb-links-cont">
+                <a href="/">Acceuil</a>
+                <a href="/service">Ajouter un service</a>
+                <a href="/renseignement">Renseignement</a>
+                <a href="/inscription">Inscription</a>
+            </div>
+        </div>
+        <div id="nb-md">
+            <a href="/">
+                <div class="element-cont">
+                    <div class="sub-cont">
+                        <i class="gg-home"></i>
+                        <span>Acceuil</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/service">
+                <div class="element-cont">
+                    <div class="sub-cont">
+                        <i class="gg-file-add"></i>
+                        <span>Ajouter un service</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/renseignement">
+                <div class="element-cont">
+                    <div class="sub-cont">
+                        <i class="gg-play-list-add"></i>
+                        <span>Renseignement</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/inscription">
+                <div class="element-cont">
+                    <div class="sub-cont">
+                        <i class="gg-keyhole"></i>
+                        <span>Inscription</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- navbar -->
+
     <form id="form">
-        <h1>Bonjour</h1>
+        <h1>Informations de Service</h1>
         <div class="input-box">
-            <input  type="text" class="serviceName">
-            <span  data-placeholder="Nom de Service"></span>
+            <input type="text" class="serviceName">
+            <span data-placeholder="Nom de Service"></span>
         </div>
 
         <div class="input-box">
@@ -27,11 +78,7 @@
         <!-- <button class="add-btn">Ajouter</button> -->
 
     </form>
-    <script src="js/main.js"></script>
-</body>
-
-</html>
-
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
