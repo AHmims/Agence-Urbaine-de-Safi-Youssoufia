@@ -193,7 +193,6 @@ $('#btnconnection').click(() => {
                 motPass: $('#ConnectionMotDePass').val()
             }
         }, (response) => {
-<<<<<<< HEAD
                 if(response!=="false")
                 {
                     sessionStorage.setItem("email", $('#ConnectionEmail').val());
